@@ -22,3 +22,5 @@ mod "puppetlabs/apache"
 mod "puppetlabs/mysql"
 mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
+mod 'git-fact',
+  :git => 'http://10.30.5.74/root/git-fact.git'
