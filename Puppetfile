@@ -20,5 +20,5 @@ mod "puppetlabs/stdlib"
 mod "puppetlabs/concat"
 mod "puppetlabs/apache"
 mod "puppetlabs/mysql"
-mod 'voxpupuli/puppet-staging',
+mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
