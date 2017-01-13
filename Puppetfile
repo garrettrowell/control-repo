@@ -20,6 +20,7 @@ mod "puppetlabs/stdlib", '4.2.2'
 mod "puppetlabs/concat", '1.1.0'
 mod "puppetlabs/apache"
 mod "puppetlabs/mysql"
+mod "voxpupuli/puppet-selinux"
 mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
 mod 'git_fact',

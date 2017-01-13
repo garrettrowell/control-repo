@@ -30,3 +30,7 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
+
+node 'cent-agent.localdomain' {
+    include ::role::apache_sites
+}
