@@ -4,8 +4,8 @@ define profile::apache_site (
   Integer                        $site_port    = 80,
   String                         $site_ensure  = 'present',
   String                         $site_docroot = "/var/www/${name}",
-  String                         $site_owner   = 'root',#'apache',
-  String                         $site_group   = 'root',#'apache',
+  String                         $site_owner   = 'root',
+  String                         $site_group   = 'root',
 ){
   apache::vhost { "${name}.example.com":
     ip            => $site_ip,

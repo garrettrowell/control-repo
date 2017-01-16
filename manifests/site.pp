@@ -18,4 +18,18 @@ node 'cent-agent.localdomain' {
     Concat::Fragment <| |> {
       order => '10',
     }
+
+    #needs to be moved into roles + profiles
+    class { '::mysql::server':
+      root_password           => 'strongpassword',
+      remove_default_accounts => true,
+    }
+
+    mysql::db { 'mydb1':
+      user     => 'myuser',
+      password => 'mypass',
+      host     => 'localhost',
+      grant    => ['SELECT', 'UPDATE'],
+    }
+
 }
