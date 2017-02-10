@@ -33,3 +33,6 @@ mod 'yum',
   :git => 'https://github.com/example42/puppet-yum.git'
 mod 'archive',
   :git => 'https://github.com/voxpupuli/puppet-archive.git'
+mod 'puppi',
+  :git => 'https://github.com/example42/puppi.git'
+
