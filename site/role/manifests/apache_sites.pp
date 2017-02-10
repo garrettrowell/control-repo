@@ -1,4 +1,6 @@
 class role::apache_sites {
+  include ::apache::mod::php
+
   class { 'apache':
     default_vhost => false,
   }
