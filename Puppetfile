@@ -31,3 +31,5 @@ mod 'php',
   :git => 'https://github.com/voxpupuli/puppet-php.git'
 mod 'yum',
   :git => 'https://github.com/example42/puppet-yum.git'
+mod 'archive',
+  :git => 'https://github.com/voxpupuli/puppet-archive.git'
