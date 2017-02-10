@@ -27,5 +27,5 @@ mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
 mod 'git_fact',
   :git => 'http://10.30.5.74/root/git-fact.git'
-mod: 'php',
+mod 'php',
   :git => 'https://github.com/voxpupuli/puppet-php.git'
