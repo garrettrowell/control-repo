@@ -21,7 +21,8 @@ mod "puppetlabs/concat", '1.1.0'
 mod "puppetlabs/apache"
 mod "puppetlabs/mysql"
 mod 'selinux',
-  :git => 'https://github.com/voxpupuli/puppet-selinux.git'
+  :git => 'https://github.com/voxpupuli/puppet-selinux.git',
+  :ref => 'v0.8.0'
 mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
 mod 'git_fact',
