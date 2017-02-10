@@ -12,7 +12,16 @@ node default {
 
 node 'cent-agent.localdomain' {
     include ::role::apache_sites
-    include ::php
+
+    class { '::php':
+      ensure       => latest,
+      manage_repos => true,
+      fpm          => true,
+      dev          => true,
+      composer     => true,
+      pear         => true,
+      phpunit      => false,
+    }
 
     #Only needed when using concat module tag 1.1.0,
     # order needs to be a string. Fixed in tag >= 1.1.1

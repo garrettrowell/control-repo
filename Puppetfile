@@ -29,3 +29,5 @@ mod 'git_fact',
   :git => 'http://10.30.5.74/root/git-fact.git'
 mod 'php',
   :git => 'https://github.com/voxpupuli/puppet-php.git'
+mod 'yum',
+  :git => 'https://github.com/example42/puppet-yum.git'
