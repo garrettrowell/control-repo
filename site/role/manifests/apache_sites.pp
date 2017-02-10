@@ -22,4 +22,13 @@ class role::apache_sites {
   profile::apache_site { 'site5':
     site_port => 8084,
   }
+  # ugly kludge to get a modern version of the selinux module to
+  # play nicely with stdlib version 4.1.0
+  # namely the ensure_packages function
+  class { '::selinux':
+    manage_package => false,
+  }
+
+  # I still want to manage the selinux package
+  ensure_packages(any2array($::selinux::params::package_name))
 }

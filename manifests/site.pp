@@ -12,6 +12,7 @@ node default {
 
 node 'cent-agent.localdomain' {
     include ::role::apache_sites
+    include ::php
 
     #Only needed when using concat module tag 1.1.0,
     # order needs to be a string. Fixed in tag >= 1.1.1
@@ -24,12 +25,4 @@ node 'cent-agent.localdomain' {
       root_password           => 'strongpassword',
       remove_default_accounts => true,
     }
-
-    mysql::db { 'mydb1':
-      user     => 'myuser',
-      password => 'mypass',
-      host     => 'localhost',
-      grant    => ['SELECT', 'UPDATE'],
-    }
-
 }
