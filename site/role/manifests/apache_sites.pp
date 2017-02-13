@@ -1,9 +1,9 @@
 class role::apache_sites {
-  include ::apache::mod::php
-
   class { 'apache':
     default_vhost => false,
   }
+
+  include ::apache::mod::php
 
   profile::apache_site { 'site1':
     site_port => 8080,

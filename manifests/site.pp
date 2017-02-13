@@ -34,4 +34,8 @@ node 'cent-agent.localdomain' {
       root_password           => 'strongpassword',
       remove_default_accounts => true,
     }
+
+    class { '::mysql::bindings':
+      php_enable => true,
+    }
 }

@@ -25,6 +25,8 @@ define profile::apache_site (
     require => Apache::Vhost["${name}.example.com"],
   }
 
+  profile::site_db { "${name}": }
+
   selinux::port { "allow http_port_t ${site_port}":
     context  => 'http_port_t',
     port     => $site_port,
