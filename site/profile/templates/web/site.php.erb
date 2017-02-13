@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<b><%= @::environment %> <%= @name %></b><br></br>
+<b><%= @environment %> <%= @name %></b><br></br>
 
 <?php
 echo "<table style='border: solid 1px black;'>";
@@ -34,7 +34,7 @@ $dbname = "<%= @name %>_db";
 try {
      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $stmt = $conn->prepare("SELECT id, CustomerName, ContactName, Address, PostalCode, Country FROM site1");
+     $stmt = $conn->prepare("SELECT id, CustomerName, ContactName, Address, PostalCode, Country FROM <%= @name %>");
      $stmt->execute();
 
      // set the resulting array to associative
