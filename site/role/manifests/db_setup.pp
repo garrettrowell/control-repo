@@ -1,5 +1,5 @@
 class role::db_setup (
-  $db_root,
+  $db_root = hiera('role::db_setup::db_root'),
 ){
   class { '::php':
     ensure       => latest,
