@@ -10,7 +10,8 @@ mod 'selinux',
 mod 'staging',
   :git => 'https://github.com/voxpupuli/puppet-staging'
 mod 'git_fact',
-  :git => 'http://10.30.5.74/root/git-fact.git'
+  :git => 'http://10.30.5.74/root/git-fact.git',
+  :ref => 'staging'
 mod 'php',
   :git => 'https://github.com/voxpupuli/puppet-php.git',
   :ref => '03e1187f6585ef9c09724f1461c60f51790ff236'
