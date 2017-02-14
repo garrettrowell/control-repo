@@ -11,7 +11,6 @@ define profile::site_db (
   String                $site_group   = 'root',
   Pattern[/([0-7]{4})/] $site_mode    = '0644',
 ){
-
   file { "${db_path}":
     ensure => $db_ensure,
     source => "puppet:///modules/profile/db/${name}.sql",
