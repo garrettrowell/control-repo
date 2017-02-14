@@ -13,6 +13,16 @@ node default {
 node 'cent-agent.localdomain' {
     include ::role::apache_sites
 
+    class { '::php':
+      ensure       => latest,
+      manage_repos => true,
+      fpm          => true,
+      dev          => true,
+      composer     => true,
+      pear         => true,
+      phpunit      => false,
+    }
+
     #Only needed when using concat module tag 1.1.0,
     # order needs to be a string. Fixed in tag >= 1.1.1
     Concat::Fragment <| |> {
@@ -25,11 +35,7 @@ node 'cent-agent.localdomain' {
       remove_default_accounts => true,
     }
 
-    mysql::db { 'mydb1':
-      user     => 'myuser',
-      password => 'mypass',
-      host     => 'localhost',
-      grant    => ['SELECT', 'UPDATE'],
+    class { '::mysql::bindings':
+      php_enable => true,
     }
-
 }

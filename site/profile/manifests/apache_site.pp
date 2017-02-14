@@ -15,14 +15,12 @@ define profile::apache_site (
     docroot_group => $site_group,
   }
 
-  file { "${name}.index":
-    path    => "${site_docroot}/index.html",
-    ensure  => $site_ensure,
-    owner   => $site_owner,
-    group   => $site_group,
-    mode    => $site_mode,
-    content => "${::environment} ${name}",
-    require => Apache::Vhost["${name}.example.com"],
+  profile::site_db { "${name}":
+    site_ensure  => $site_ensure,
+    site_docroot => $site_docroot,
+    site_owner   => $site_owner,
+    site_group   => $site_group,
+    site_mode    => $site_mode
   }
 
   selinux::port { "allow http_port_t ${site_port}":
